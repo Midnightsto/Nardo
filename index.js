@@ -29,9 +29,9 @@ client.on("guildMemberAdd", (member) => {
     if (!newUsers[guild.id]) newUsers[guild.id] = new Discord.Collection();
     newUsers[guild.id].set(member.id, member.user);
   
-    if (newUsers[guild.id].size > 10) {
+    if (newUsers[guild.id].size > 0) {
       const userlist = newUsers[guild.id].map(u => u.toString()).join(" ");
-      guild.channels.get(guild.id).send("Welcome our new users!\n" + userlist);
+      guild.channels.get(guild.id).send("Welcome to our Selver\n" + userlist);
       newUsers[guild.id].clear();
     }
   });
